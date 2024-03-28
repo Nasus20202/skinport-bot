@@ -1,9 +1,13 @@
 # Skinport Bot
 Simple bot for Skinport API, includes WEB UI (default port: 5000). It also supports Discord Webhooks. 
 
-Start with:
+Start as Python script:
 ```bash
 python3 main.py
+```
+or a Docker container:
+```bash
+docker compose up
 ```
 
 ### Configuration

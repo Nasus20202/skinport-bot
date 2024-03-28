@@ -1,0 +1,7 @@
+services:
+  skinport-bot:
+    build: .
+    ports:
+      - "8000:5000"
+    environment:
+      - WEBHOOK_URLS=${WEBHOOK_URLS}

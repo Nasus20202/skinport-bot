@@ -3,7 +3,7 @@ Simple bot for Skinport API, includes WEB UI (default port: 5000). It also suppo
 
 Start as Python script:
 ```bash
-python3 main.py
+python3 src/main.py
 ```
 or a Docker container:
 ```bash

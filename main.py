@@ -3,6 +3,7 @@ import bot
 from threading import Thread
 
 thread = Thread(target=app.run)
+thread.daemon = True
 thread.start()
 
 bot.start()

@@ -1,0 +1,4 @@
+discord
+skinport.py
+flask
+python-dotenv

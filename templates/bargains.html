@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Skinport Bot</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+</head>
+<body>
+    <nav>
+      <ul>
+        <li><h2>Skinport bot</h2></li>
+        <li>Currency: {{config.currency}}</li>
+        <li>Price: {{config.min_price}} - {{config.max_price}} {{config.currency}}</li>
+        <li>Discount: >{{config.minimum_discount}}%</li>
+        <li>Tags: {{config.tags}}</li>
+      </ul>
+    </nav>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Float</th>
+        <th>Lock</th>
+        <th>Price</th>
+        <th>Suggested</th>
+        <th><a style="color: inherit; text-decoration: inherit" href="/?sort=discount">Discount</a></th>
+        <th>7d</th>
+        <th>30d</th>
+        <th>90d</th>
+        <th>Image</th>
+      </tr>
+      {% for bargain in bargains %}
+          <tr>
+            <td><a style="color: {{bargain.get_color_str()}}; text-decoration: inherit" href={{bargain.url}}>{{bargain.market_name}}<a/></td>
+            <td>{{bargain.get_wear_str(True)}}</td>
+            <td>{{bargain.get_lock_str(True)}}</td>
+            <td>{{bargain.price}} {{config.currency}}</td>
+            <td>{{bargain.suggested_price}} {{config.currency}}</td>
+            <td>-{{bargain.discount|round(1)}}%</td>
+            <td>{{bargain.get_7d_str()}}</td>
+            <td>{{bargain.get_30d_str()}}</td>
+            <td>{{bargain.get_90d_str()}}</td>
+            <td style="width:75px; height:75px"><img style="max-height:100%; max-width:100%" src={{bargain.image}} alt={{bargain.name}} /></td>
+          </tr>
+      {% endfor %}
+    </table>
+</body>
+</html>

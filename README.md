@@ -9,6 +9,7 @@ or a Docker container:
 ```bash
 docker compose up
 ```
+App will be available at port 5000 (http://localhost:5000/).
 
 ### Configuration
 

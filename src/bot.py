@@ -71,8 +71,6 @@ async def on_sale_feed(data):
 
     async with aiohttp.ClientSession() as session:
         for webhook_url in config.discord_webhook_urls:
-            if webhook_url == "":
-                continue
             webhook = discord.Webhook.from_url(webhook_url, session=session)
             for embed in embeds:
                 await webhook.send(embed=embed)

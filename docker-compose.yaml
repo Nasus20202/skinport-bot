@@ -5,3 +5,8 @@ services:
       - "5000:5000"
     environment:
       - WEBHOOK_URLS=${WEBHOOK_URLS}
+      - MINIMUM_DISCOUNT=10
+      - MIN_PRICE=0
+      - MAX_PRICE=1000
+      - CURRENCY=EUR
+      - TAGS=Knife;Pistol;Rifle
